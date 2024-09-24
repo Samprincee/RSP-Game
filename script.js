@@ -3,6 +3,10 @@ let result = document.querySelector(".result");
 let you = document.querySelector(".you");
 let ai = document.querySelector(".ai");
 
+let winSound = new Audio("win.mp3")
+let loseSound = new Audio("lose.mp3")
+let drawSound = new Audio("draw.mp3")
+
 
 function startanimation(){
     you.style = "animation: shake 1s linear 3;";
@@ -60,6 +64,7 @@ function playgame(userchoice , comchoice){
     }
     
     if(userchoice === comchoice){
+        drawSound.play();
         result.innerHTML = "Draw, Try Again";
         result.classList.add("draw");
     }
@@ -67,11 +72,13 @@ function playgame(userchoice , comchoice){
         || userchoice === "paper" && comchoice === "rock" 
         || userchoice === "rock" && comchoice === "scissor"
     ){
+        winSound.play();
         result.innerHTML = "Hurray you Win!!";
         result.classList.add("win");     
         
     }
     else{
+        loseSound.play();
         result.innerHTML = "Sorry You Lose!!";
         result.classList.add("lose");
     }
