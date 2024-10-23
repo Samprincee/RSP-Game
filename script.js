@@ -67,6 +67,9 @@ function playgame(userchoice , comchoice){
         drawSound.play();
         result.innerHTML = "Draw, Try Again";
         result.classList.add("draw");
+        drawSound.currentTime = 2;
+        winSound.pause();
+        loseSound.pause();
     }
     else if( userchoice === "scissor" && comchoice === "paper"
         || userchoice === "paper" && comchoice === "rock" 
@@ -75,12 +78,17 @@ function playgame(userchoice , comchoice){
         winSound.play();
         result.innerHTML = "Hurray you Win!!";
         result.classList.add("win");     
-        
+        winSound.currentTime = 2;
+        drawSound.pause();
+        loseSound.pause();
     }
     else{
         loseSound.play();
         result.innerHTML = "Sorry You Lose!!";
         result.classList.add("lose");
+        loseSound.currentTime = 2;
+        drawSound.pause();
+        winSound.pause();
     }
 
 }
