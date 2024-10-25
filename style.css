@@ -1,18 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.966);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("background.gif");
+    background-size: 500px 500px;
 }
 
-#game{
+#game {
     background: rgb(43, 40, 40);
     height: 80vh;
     width: 90vw;
@@ -21,11 +24,11 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 2px 2px 10px rgba(33, 132, 168, 0.966), 
-    -2px -2px 10px rgba(98, 14, 134, 0.966);
+    box-shadow: 2px 2px 10px rgba(33, 132, 168, 0.966),
+        -2px -2px 10px rgba(98, 14, 134, 0.966);
 }
 
-.head{
+.head {
     width: 100%;
     height: 10%;
     display: flex;
@@ -34,26 +37,27 @@ body{
     margin-top: 30px;
 }
 
-.you_title{
+.you_title {
     font-size: 25px;
     background-color: transparent;
     padding: 8px 20px;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(11, 38, 48, 0.966), 
-    -2px -2px 10px rgba(44, 11, 58, 0.966);
+    box-shadow: 2px 2px 10px rgba(11, 38, 48, 0.966),
+        -2px -2px 10px rgba(44, 11, 58, 0.966);
     color: yellow;
 }
-.ai_title{
+
+.ai_title {
     font-size: 25px;
     background-color: transparent;
     padding: 8px 20px;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(11, 38, 48, 0.966), 
-    -2px -2px 10px rgba(44, 11, 58, 0.966);
+    box-shadow: 2px 2px 10px rgba(11, 38, 48, 0.966),
+        -2px -2px 10px rgba(44, 11, 58, 0.966);
     color: red;
 }
 
-.hand{
+.hand {
     width: 100%;
     height: 40%;
     display: flex;
@@ -62,16 +66,17 @@ body{
     font-size: 100px;
 }
 
-.you{
-    text-shadow: 2px 2px 10px rgba(33, 132, 168, 0.966), 
-    -2px -2px 10px rgba(98, 14, 134, 0.966);
-}
-.ai{
-    text-shadow: 2px 2px 10px rgba(229, 9, 9, 0.966), 
-    -2px -2px 10px rgba(241, 4, 4, 0.966);
+.you {
+    text-shadow: 2px 2px 10px rgba(33, 132, 168, 0.966),
+        -2px -2px 10px rgba(98, 14, 134, 0.966);
 }
 
-.choices{
+.ai {
+    text-shadow: 2px 2px 10px rgba(229, 9, 9, 0.966),
+        -2px -2px 10px rgba(241, 4, 4, 0.966);
+}
+
+.choices {
     width: 100%;
     height: 25%;
     display: flex;
@@ -80,7 +85,7 @@ body{
     font-size: 25px;
 }
 
-.choice{
+.choice {
     background-color: transparent;
     width: 70px;
     height: 70px;
@@ -90,20 +95,20 @@ body{
     align-items: center;
     transition: all 0.5s;
     cursor: pointer;
-    
-    box-shadow: 2px 2px 10px rgba(11, 38, 48, 0.966), 
-    -2px -2px 10px rgba(44, 11, 58, 0.966);
 
-    text-shadow: 2px 2px 10px rgba(152, 28, 174, 0.966), 
-    -2px -2px 10px rgba(65, 23, 219, 0.966);
+    box-shadow: 2px 2px 10px rgba(11, 38, 48, 0.966),
+        -2px -2px 10px rgba(44, 11, 58, 0.966);
+
+    text-shadow: 2px 2px 10px rgba(152, 28, 174, 0.966),
+        -2px -2px 10px rgba(65, 23, 219, 0.966);
 }
 
-.choice:hover{
-    box-shadow: 2px 2px 10px rgba(33, 132, 168, 0.966), 
-    -2px -2px 10px rgba(98, 14, 134, 0.966);
+.choice:hover {
+    box-shadow: 2px 2px 10px rgba(33, 132, 168, 0.966),
+        -2px -2px 10px rgba(98, 14, 134, 0.966);
 }
 
-.result{
+.result {
     font-size: 20px;
     margin-top: 20px;
     width: 65%;
@@ -115,33 +120,41 @@ body{
     font-size: 30px;
     font-weight: bold;
 }
-.draw{
-    box-shadow: 2px 2px 10px rgba(214, 255, 29, 0.966), 
-    -2px -2px 10px  rgba(214, 255, 29, 0.966);
+
+.draw {
+    box-shadow: 2px 2px 10px rgba(214, 255, 29, 0.966),
+        -2px -2px 10px rgba(214, 255, 29, 0.966);
     background-color: yellow;
     color: black;
 }
-.lose{
-    box-shadow: 2px 2px 10px rgba(255, 29, 33, 0.966), 
-    -2px -2px 10px  rgba(255, 29, 29, 0.966);
+
+.lose {
+    box-shadow: 2px 2px 10px rgba(255, 29, 33, 0.966),
+        -2px -2px 10px rgba(255, 29, 29, 0.966);
     background-color: red;
     color: black;
 }
-.win{
-    box-shadow: 2px 2px 10px rgba(29, 255, 52, 0.966), 
-    -2px -2px 10px  rgba(29, 255, 48, 0.966);
+
+.win {
+    box-shadow: 2px 2px 10px rgba(29, 255, 52, 0.966),
+        -2px -2px 10px rgba(29, 255, 48, 0.966);
     background-color: rgb(30, 255, 64);
     color: black;
 }
 
-@keyframes shake{
-    0% , 50% ,100%{
+@keyframes shake {
+
+    0%,
+    50%,
+    100% {
         transform: translateY(0px);
     }
-    25%{
+
+    25% {
         transform: translateY(20px);
     }
-    75%{
+
+    75% {
         transform: translateY(-20px);
     }
 }

@@ -76,11 +76,14 @@ function playgame(userchoice , comchoice){
         result.innerHTML = "Hurray you Win!!";
         result.classList.add("win");     
         
+        
     }
     else{
         loseSound.play();
         result.innerHTML = "Sorry You Lose!!";
         result.classList.add("lose");
+        
+        
     }
 
 }
